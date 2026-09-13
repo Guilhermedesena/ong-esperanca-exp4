@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Componentes de feedback da ONG Esperança.">
+  <title>ONG Esperança | Componentes de feedback</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="container topbar">
+    <a class="logo" href="index.html" aria-label="Ir para a página inicial">
+      <img src="imagens/logo.png" alt="ONG Esperança">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal"><span></span><span></span><span></span><span class="sr-only">Abrir menu</span></button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul class="nav-list" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li class="nav-item dropdown"><button class="nav-link submenu-toggle" type="button" aria-expanded="false">Projetos <span aria-hidden="true">▾</span></button><ul class="submenu"><li><a href="projetos.html#doacoes">Doações</a></li><li><a href="projetos.html#voluntariado">Voluntariado</a></li><li><a href="projetos.html#como-ajudar">Como ajudar</a></li></ul></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="feedback.html" aria-current="page">Feedback</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container feedback-page">
+  <section class="feedback-hero" aria-labelledby="titulo-feedback">
+    <div>
+      <span class="eyebrow">Design system · ONG Esperança</span>
+      <h1 id="titulo-feedback">Componentes de feedback</h1>
+      <p>Estados consistentes e acessíveis para informar andamento, sucesso, atenção e erros nas ações da plataforma.</p>
+    </div>
+    <div class="feedback-summary" aria-label="Resumo dos componentes">
+      <strong>4 estados</strong>
+      <span>1 linguagem visual</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="titulo-badges">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Categorização</span>
+        <h2 id="titulo-badges">Badges semânticos</h2>
+      </div>
+      <p>Etiquetas curtas para comunicar o estado de campanhas e inscrições.</p>
+    </div>
+    <div class="component-panel badge-row">
+      <span class="badge badge--success"><span aria-hidden="true">●</span> Ativo</span>
+      <span class="badge badge--info"><span aria-hidden="true">●</span> Em análise</span>
+      <span class="badge badge--warning"><span aria-hidden="true">●</span> Últimas vagas</span>
+      <span class="badge badge--neutral"><span aria-hidden="true">●</span> Encerrado</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="titulo-alertas">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Mensagens contextuais</span>
+        <h2 id="titulo-alertas">Alertas do sistema</h2>
+      </div>
+      <p>Cor, ícone e texto trabalham juntos; a informação não depende apenas da cor.</p>
+    </div>
+    <div class="alert-grid">
+      <article class="alert alert--success" role="status">
+        <span class="alert__icon" aria-hidden="true">✓</span>
+        <div><strong>Cadastro concluído</strong><p>Recebemos seus dados. Em breve nossa equipe entrará em contato.</p></div>
+      </article>
+      <article class="alert alert--info" role="status">
+        <span class="alert__icon" aria-hidden="true">i</span>
+        <div><strong>Inscrição em análise</strong><p>A validação costuma ser concluída em até dois dias úteis.</p></div>
+      </article>
+      <article class="alert alert--warning" role="alert">
+        <span class="alert__icon" aria-hidden="true">!</span>
+        <div><strong>Atenção ao prazo</strong><p>As inscrições para esta campanha terminam amanhã às 18h.</p></div>
+      </article>
+      <article class="alert alert--error" role="alert">
+        <span class="alert__icon" aria-hidden="true">×</span>
+        <div><strong>Não foi possível enviar</strong><p>Revise os campos destacados e tente novamente.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="titulo-acoes">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Microinterações</span>
+        <h2 id="titulo-acoes">Modal e toast</h2>
+      </div>
+      <p>Use o modal para decisões e o toast para confirmações não obstrutivas.</p>
+    </div>
+    <div class="component-panel action-row">
+      <button class="btn" type="button" data-open-modal>Revisar participação</button>
+      <button class="btn sec" type="button" data-show-toast>Confirmar interesse</button>
+    </div>
+  </section>
+</main>
+
+<div class="toast" data-toast role="status" aria-live="polite" aria-atomic="true">
+  <span class="toast__icon" aria-hidden="true">✓</span>
+  <div><strong>Interesse confirmado</strong><span>Você receberá as próximas orientações por e-mail.</span></div>
+  <button type="button" aria-label="Fechar notificação" data-close-toast>×</button>
+</div>
+
+<div class="modal-backdrop" data-modal hidden>
+  <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
+    <button class="dialog__close" type="button" aria-label="Fechar modal" data-close-modal>×</button>
+    <span class="dialog__icon" aria-hidden="true">♥</span>
+    <span class="section-kicker">Confirmação</span>
+    <h2 id="titulo-modal">Deseja participar desta ação?</h2>
+    <p>Ao confirmar, a equipe da ONG Esperança receberá seu interesse e enviará as orientações para o próximo encontro.</p>
+    <div class="dialog__actions">
+      <button class="btn sec" type="button" data-close-modal>Agora não</button>
+      <button class="btn" type="button" data-confirm-modal>Confirmar participação</button>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <p><strong>ONG Esperança</strong></p>
+    <p>E-mail: contato@ongesperanca.org.br · Telefone: (11) 99999-9999</p>
+    <p>&copy; 2026 ONG Esperança. Projeto acadêmico demonstrativo.</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
