@@ -18,6 +18,7 @@ Aplicação front-end acadêmica para divulgação dos projetos da ONG Esperanç
 - JavaScript com ES6 Modules;
 - Web Storage API;
 - Chart.js 4.5.1.
+- Vite para desenvolvimento e build de produção.
 
 ## Estrutura
 
@@ -27,20 +28,36 @@ Aplicação front-end acadêmica para divulgação dos projetos da ONG Esperanç
 ├── html/views/         # fragmentos das rotas da SPA
 ├── imagens/            # recursos visuais
 ├── js/app.js           # ponto de entrada
-└── js/modules/         # módulos por responsabilidade
+├── js/modules/         # módulos por responsabilidade
+├── scripts/check.mjs   # verificação estrutural automatizada
+└── vite.config.js      # configuração do build
 ```
 
 Os módulos separam roteamento, templates, dados, validação, armazenamento, gráficos e interações. Consulte `js/modules/README.md` para o detalhamento.
 
-## Execução local
+## Pré-requisitos e instalação
 
-Como as views são carregadas com `fetch`, abra o projeto por meio de um servidor HTTP local. Um exemplo com Python é:
+- Node.js 20.19 ou superior;
+- pnpm 9 ou superior.
 
 ```bash
-python -m http.server 8000
+git clone https://github.com/Guilhermedesena/ong-esperanca-exp4.git
+cd ong-esperanca-exp4
+pnpm install
+pnpm dev
 ```
 
-Depois, acesse `http://localhost:8000`.
+O servidor de desenvolvimento informa a URL local no terminal.
+
+## Verificação e produção
+
+```bash
+pnpm check
+pnpm build
+pnpm preview
+```
+
+`pnpm check` valida a estrutura essencial. `pnpm build` gera os recursos minificados em `dist/`, incluindo as views e imagens necessárias em tempo de execução. `pnpm preview` permite verificar localmente o resultado de produção.
 
 ## Estratégia de versionamento
 
